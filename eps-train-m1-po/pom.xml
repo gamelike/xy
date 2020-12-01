@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>eps-train</artifactId>
+        <groupId>com.xinyuan</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>eps-train-m1-po</artifactId>
+
+    <name>eps-train-m1-po</name>
+    <url>http://www.example.com</url>
+    <dependencies>
+        <dependency>
+            <groupId>com.xinyuan</groupId>
+            <artifactId>eps-dao</artifactId>
+        </dependency>
+    </dependencies>
+</project>

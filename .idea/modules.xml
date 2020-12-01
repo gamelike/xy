@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/eps-train.iml" filepath="$PROJECT_DIR$/eps-train.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eps-train-constants/eps-train-constants.iml" filepath="$PROJECT_DIR$/eps-train-constants/eps-train-constants.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eps-train-m1/eps-train-m1.iml" filepath="$PROJECT_DIR$/eps-train-m1/eps-train-m1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eps-train-m1-po/eps-train-m1-po.iml" filepath="$PROJECT_DIR$/eps-train-m1-po/eps-train-m1-po.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eps-train-m1-to/eps-train-m1-to.iml" filepath="$PROJECT_DIR$/eps-train-m1-to/eps-train-m1-to.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eps-train-web/eps-train-web.iml" filepath="$PROJECT_DIR$/eps-train-web/eps-train-web.iml" />
+    </modules>
+  </component>
+</project>

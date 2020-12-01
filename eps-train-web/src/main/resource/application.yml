@@ -1,0 +1,54 @@
+spring:
+  profiles:
+    include: support
+  application:
+    name: train
+  datasource:
+    username: zhao
+    password: 990826
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    ##url: jdbc:oracle:thin:@61.163.210.203:9999/orcl
+    url: jdbc:oracle:thin:@localhost:1521/orcl
+server:
+  port: 8082
+  servlet:
+    context-path: /train
+    session:
+      timeout: 30m
+logging:
+  level:
+    org:
+      springframework: info
+# 系统自定义配置
+eps:
+  config:
+    url: http://localhost:${server.port}${server.servlet.context-path}
+  helper:
+    skin: skin
+    CDLX: lefttemplate
+    menu-style: 0
+    app-name: ${spring.application.name}
+    jdbc-db-type: oracle
+    server-mode: debug
+    static-resources-version: 2018.11.02
+    app-xtmc: 信源采购系统
+  #微服务相关，配置服务提供出的服务名称
+  service:
+    base:
+      name: ${spring.application.name}
+      contextPath: ${server.servlet.context-path}
+    kbjm:
+      name: ${spring.application.name}
+      contextPath: ${server.servlet.context-path}
+    jyzt-gys:
+      name: ${spring.application.name}
+      contextPath: ${server.servlet.context-path}
+  files:
+    app-file-temp-path: D:/webfile
+    gg-root-file-id: 2
+    exts: doc,docx,gif,jpeg,jpg,pdf,png,rar,zip,xls,xlsx,txt,file,bin,egp,apk,xml,rpx,rpg
+# 子系统信息
+zxtxx:
+  use-local: true
+  local-address: http://127.0.0.1:${server.port}${server.servlet.context-path}
+

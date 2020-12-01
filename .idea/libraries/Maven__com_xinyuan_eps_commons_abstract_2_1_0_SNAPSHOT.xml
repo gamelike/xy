@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.xinyuan:eps-commons-abstract:2.1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://E:/apache-maven/repo/com/xinyuan/eps-commons-abstract/2.1.0-SNAPSHOT/eps-commons-abstract-2.1.0-20200310.011700-333.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://E:/apache-maven/repo/com/xinyuan/eps-commons-abstract/2.1.0-SNAPSHOT/eps-commons-abstract-2.1.0-20200310.011700-333-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://E:/apache-maven/repo/com/xinyuan/eps-commons-abstract/2.1.0-SNAPSHOT/eps-commons-abstract-2.1.0-20200310.011700-333-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

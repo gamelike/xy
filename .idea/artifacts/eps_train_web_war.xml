@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="eps-train-web:war">
+    <output-path>$PROJECT_DIR$/eps-train-web/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>eps-train-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="eps-train-web-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="eps-train-web:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,4 @@
+var validate =
+    {
+        rules: {}
+    }

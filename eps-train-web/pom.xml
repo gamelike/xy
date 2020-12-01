@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>eps-train</artifactId>
+        <groupId>com.xinyuan</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>eps-train-web</artifactId>
+    <packaging>jar</packaging>
+
+    <name>eps-train-web Maven Webapp</name>
+    <url>http://www.example.com</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.xinyuan</groupId>
+            <artifactId>eps-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xinyuan</groupId>
+            <artifactId>gqcg-css</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xinyuan</groupId>
+            <artifactId>eps-javascript</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xinyuan</groupId>
+            <artifactId>eps-desktopV2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xinyuan</groupId>
+            <artifactId>eps-feigner-abstract</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xinyuan</groupId>
+            <artifactId>eps-files</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xinyuan</groupId>
+            <artifactId>eps-security-login-form</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xinyuan</groupId>
+            <artifactId>eps-train-m1</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <!--能够自动寻找springboot引导类，或者手动指定-->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-deploy</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                        <!-- skip默认deploy插件的执行 -->
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
