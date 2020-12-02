@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>一次性生成4行六列的动态生成</h3>
+<button id="add" onclick="addTable()">生成</button>
+<table border="1">
+    <tbody id="table"></tbody>
+</table>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    function addTable(){
+        for (let i = 0; i < 4; i++) {
+            $("#table").append("<tr>" +
+                "<td>" + "动态生成" + "</td>" +
+                "<td>" + "动态生成" + "</td>" +
+                "<td>" + "动态生成" + "</td>" +
+                "<td>" + "动态生成" + "</td>" +
+                "<td>" + "动态生成" + "</td>" + "</tr>");
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="tb">
+   <table>
+       <thead>
+        <tr>
+            <td>数字1</td>
+            <td>数字2</td>
+            <td>乘积</td>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+            <td><input type="text" name="s1" id="s1" /></td>
+            <td><input type="text" name="s2" id="s2" onchange="calc()"/></td>
+            <td><label></label></td>
+        </tr>
+       </tbody>
+   </table>
+</form>
+<button onclick="calc()">计算</button>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="jquery.validate.js"></script>
+<script type="text/javascript">
+    $("#tb").validate({
+        rules:{
+            s1:{
+                required: true,
+                number: true
+            },
+            s2:{
+                required: true,
+                number: true
+            }
+        },
+        messages:{
+            s1:{
+                required:"必填",
+                number:"必须是数字"
+            },
+            s2:{
+                required: "必填",
+                number: "必须是数字"
+            }
+        }
+    })
+    function calc() {
+        let res = 1;
+        $("label").html("");
+        $("input").each(function (){
+            let value = $(this).val();
+            value = parseInt(value);
+            res = res * value;
+        })
+        if(!isNaN(res)) $("label").append("<input type='text' value='" + res + "'/>");
+    }
+</script>
+</body>
+</html>

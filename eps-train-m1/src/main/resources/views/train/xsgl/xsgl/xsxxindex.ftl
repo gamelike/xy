@@ -42,7 +42,7 @@
                         </div>
                         </div>
                         <div class="col-lg-9">
-                        <div class="grid">
+                        <div class="grid" id="xsgl">
                             <div class="thead">
                                 <ul>
                                     <li style="width:10%">序号</li>
@@ -57,7 +57,7 @@
                             <div class="tbody">
                                 <#list listStudent_detail as student_detail>
                                     <ul>
-                                        <li style="width:10%"><@xy.insert value=student_detail.id/></li>
+                                        <li style="width:10%"><span class="xsgl"></span></li>
                                         <li style="width:10%"><@xy.insert value=student_detail.xm/></li>
                                         <li style="width:10%"><@xy.insert value=student_detail.xh/></li>
                                         <li style="width:10%"><@xy.insert type="map" list=xbData value=student_detail.xb/></li>
@@ -79,6 +79,11 @@
                 <@xy.foot_script >
                 </@xy.foot_script>
                 <script type="text/javascript">
+                    $(function sortSxh(){
+                        $("#xsgl").find("span[class='xsgl']").each(function (index) {
+                            $(this).html(index+1);
+                        });
+                    })
                     var setting = {
                         data: {
                             simpleData: {

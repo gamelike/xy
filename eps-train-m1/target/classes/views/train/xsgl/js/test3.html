@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="reg_testdate" action="">
+    <select name="year" onChange="Year(this.value)">
+        <option value="">请选择 年</option>
+    </select>
+    <select name="month" onChange="Month(this.value)">
+        <option value="">选择 月</option>
+    </select>
+    <select name="day">
+        <option value="">选择 日</option>
+    </select>
+</form>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        let changeId = 1;
+        function YearStart(e){
+            // 月份天数
+            MonHead = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            let year = new Date().getFullYear();
+            for (let i = (year - 30); i < (year + 11); i++) {
+                document.reg_testdate.year.options.add(new Option("" + i + "年",i));
+            }
+            for (let i = 1; i < 13; i++) {
+                document.reg_testdate.month.options.add(new Option("" + i + "月",i));
+            }
+
+            document.reg_testdate.year.value = year + 10;
+            document.reg_testdate.month.value = 12;
+            WriteDay(31);
+            document.reg_testdate.day.value = 31;
+        }
+        if (document.attachEvent) window.attachEvent("onload", YearStart);
+        else window.addEventListener('load', YearStart, false);
+        function Year(str){
+            let monthvalue = document.reg_testdate.month.options[document.reg_testdate.month.selectedIndex].value;
+            if (monthvalue == "") {
+                let e = document.reg_testdate.day;
+                optionsClear(e);
+                return;
+            }
+            let n = MonHead[monthvalue - 1];
+            if (monthvalue == 2 && isRY(str)) n++;
+            WriteDay(n)
+        }
+        function Month(str){
+            let YearValue = document.reg_testdate.year.options[document.reg_testdate.year.selectedIndex].value;
+            if (YearValue == "") {
+                let e = document.reg_testdate.day;
+                optionsClear(e);
+                return;
+            }
+            let n = MonHead[str - 1];
+            if (str == 2 && isRY(YearValue)) n++;
+            WriteDay(n)
+        }
+        function WriteDay(n){
+            let e = document.reg_testdate.day;
+            optionsClear(e);
+            for (let i = 1; i < (n + 1); i++) {
+                e.options.add(new Option("" + i + "日",i))
+            }
+        }
+        function isRY(year){
+            return (0 == year % 4 && (year % 100 != 0 || year % 400 == 0));
+        }
+        function optionsClear(e) {
+            e.options.length = 1;
+        }
+    </script>
+</body>
+</html>

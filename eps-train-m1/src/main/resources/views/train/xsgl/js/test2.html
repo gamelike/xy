@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="add" onclick="addTable()">增加表格</button>
+    <table>
+        <tbody id="table"></tbody>
+    </table>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        let count = 0;
+        function addTable(){
+            count++;
+            $("#table").append("<tr>" +
+                "<td>" + "<input type='file' onchange='uploadFile(this,count)' id='up'>" + "</td>" +
+                "<td>" + "<img src='' id='img_" + count +"'/>" + "</td>" +
+                "</tr>");
+        }
+        function uploadFile(e,count){
+            let reader = new FileReader();
+            reader.readAsDataURL(e.files[0]);
+            reader.onload = function (){
+                $("#img_" + count).attr("src",reader.result);
+            }
+        }
+    </script>
+</body>
+</html>

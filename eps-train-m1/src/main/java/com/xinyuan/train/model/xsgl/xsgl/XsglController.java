@@ -39,7 +39,7 @@ public class XsglController extends BaseController {
     @Autowired
     FilesHelper filesHelper;
     @RequestMapping()
-    public String index(Model model, @ModelAttribute("pageInfo") XinyuanDefaultSplitPageInfo pageInfo
+    public String index(Model model, @ModelAttribute("splitPageInfo") XinyuanDefaultSplitPageInfo pageInfo
             , @ModelAttribute("queryVo") QueryVo queryVo) throws JsonProcessingException {
         // 获得树菜单
         String tree = xsglService.getTree();

@@ -30,10 +30,10 @@
                     <li style="width:15%">操作</li>
                 </ul>
             </div>
-            <div class="tbody">
+            <div class="tbody" id="jsgl">
                 <#list listXs_teacher as xs_teacher>
                     <ul>
-                        <li style="width:10%"><@xy.insert value=xs_teacher.id/></li>
+                        <li style="width:10%"><span class="xh"></span></li>
                         <li style="width:10%"><@xy.insert value=xs_teacher.xm/></li>
                         <li style="width:15%"><@xy.insert value=xs_teacher.xb type="map" list=xbData /></li>
                         <li style="width:10%"><@xy.insert value=xs_teacher.lxfs/></li>
@@ -51,6 +51,13 @@
         </div>
             <@xy.splittoolbar />
             <@xy.foot_script/>
+            <script type="text/javascript">
+                $(function sortxh(){
+                    $("#jsgl").find("span[class='xh']").each(function (index) {
+                        $(this).html(index+1);
+                    });
+                })
+            </script>
         </@xy.content_body>
             </@xy.page_content>
             <@xy.page_footer>

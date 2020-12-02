@@ -36,7 +36,7 @@ public class JsglController extends BaseController {
     JsglService jsglService;
 
     @RequestMapping()
-    public String index(Model model, @ModelAttribute("pageInfo") XinyuanDefaultSplitPageInfo pageInfo
+    public String index(Model model, @ModelAttribute("splitPageInfo") XinyuanDefaultSplitPageInfo pageInfo
             , @ModelAttribute("queryVo") QueryVo queryVo){
         List<Xs_teacher> listGL_jsgl = this.jsglService.queryListList(queryVo,pageInfo);
         model.addAttribute("listXs_teacher",listGL_jsgl);
